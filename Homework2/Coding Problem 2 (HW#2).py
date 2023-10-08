@@ -11,12 +11,24 @@ def is_valid_date(date_string):
         return False
 
 
-while True:
-    date_str = input("Enter a date (e.g., March 1, 1990), or -1 to quit: ")
+file_name = input()
+my_file = open(file_name, "r")
+zero = 0
+reading = my_file.readlines()
 
+for x in reading:
+    if "\n" in x:
+        replacement = x.replace("\n", "")
+        reading[zero] = replacement
+        zero += 1
+    else:
+        zero += 1
+
+for xy in reading:
+    date_str = xy
     if date_str == '-1':
         break
-    # Extract Date
+    # Extract Date #
     date_start = date_str.find(" ")
     date_end = date_str.find(',', date_start)
     if date_start != -1 and date_end != -1:
