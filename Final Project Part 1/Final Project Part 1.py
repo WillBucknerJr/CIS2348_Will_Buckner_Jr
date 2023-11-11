@@ -22,6 +22,7 @@ Grad_dicta = {}
 Major_dicta = {}
 testdictionary = {}
 testdictionaryb = {}
+testdictionaryc = {}
 
 with file_opener_majors, file_opener_GPA, file_opener_graduation:
     for x in FOM:
@@ -96,8 +97,8 @@ with file_opener_majors, file_opener_GPA, file_opener_graduation:
 
     check = sorted([x[0] for x in new_lists])  # sort by student id
     for x in new_lists:
-        testdictionary[x[0]] = x
-    check3 = [testdictionary[x] for x in check]
+        testdictionaryc[x[0]] = x
+    check3 = [testdictionaryc[x] for x in check]
     for major in check3:
         major_filename = f"{z[1].replace(' ', '')}.csv"  # Files for each Major
         if major[1] not in Major_dicta.keys():
