@@ -49,8 +49,8 @@ with file_opener_majors, file_opener_GPA, file_opener_graduation, full_roster_ou
             listA[1] = updateA[0]
         GPA_dictionary[listA[0]] = listA[1]
 
-    for w in Read_GRAD_dates:
-        listB = w.split(",")
+    for read_dates in Read_GRAD_dates:
+        listB = read_dates.split(",")
         updateB = listB[1]
         if len(updateB) == 9:
             listB[1] = updateB[0:8]
